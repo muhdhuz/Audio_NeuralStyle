@@ -9,7 +9,7 @@ However instead of learning style from images we use the spectrogram in place to
 General implementation is based off the [Pytorch tutorial on Neural Transfer](http://pytorch.org/tutorials/advanced/neural_style_tutorial.html) by Alexis Jacq. Also inspired by [Audio texture synthesis](https://github.com/DmitryUlyanov/neural-style-audio-torch) by Dmitry Ulyanov.
 
 **To use**:  
-1. Open neural_style_audio_pretrained.ipynb jupyter notebook. If required constant-Q scaling, use  	neural_style_audio_cqt.ipynb instead  
+1. Open neural_style_audio_pretrained.ipynb jupyter notebook. If require constant-Q scaling, use  	neural_style_audio_cqt.ipynb instead  
 2. Some important parameters you may want to change:  
     * filename parameters  
     * librosa Fourier parameters  
@@ -25,14 +25,14 @@ General implementation is based off the [Pytorch tutorial on Neural Transfer](ht
 4. Choose which layers to grab the statistics from:  
     * content_layers_default: for content statistics  
     * style_layers_default: for style statistics  
-    * layers names followed by underscore and the layer number eg. relu_1, batchnorm_2, conv_3, pool_1  
+    * layer names followed by underscore and the layer number eg. relu_1, batchnorm_2, conv_3, pool_1  
 5. Noise image initialization:  
     * The noise image you optimize over can be initialzed with different options  
     * Look for the cell headed by """image to input in generative network"""  
-    * samples: truncated normal distribution (lower,upper,mu,sigma can be defined)  
+    * samples: truncated normal distribution (lower, upper, mu, sigma can be defined)  
     * rand: uniform distribution ranging from 0 to 0.1 (most texture synthesis experiments use this)  
     * randn: normal distribution centred on 0  
-    * cont_img.clone: input the content image, normally used in style transfer  
+    * cont_img.clone: input the content image, normally used for style transfer  
     * select the above options by comment/uncommenting the code  
 6. Running the optimization:  
     * Tweak the style_weight, content_weight and reg_weights as desired  
